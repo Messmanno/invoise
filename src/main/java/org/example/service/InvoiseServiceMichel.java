@@ -4,8 +4,8 @@ import org.example.entity.Invoise;
 import org.example.repository.InvoiseRepository;
 import org.example.repository.InvoiseRepositoryInterface;
 
-public class InvoiseService  implements  InvoiseServiceInterface{
-    private static Long inc = 0L;
+public class InvoiseServiceMichel implements InvoiseServiceInterface {
+    private static Long inc = 112L;
     private InvoiseRepositoryInterface invoiseRepository;
 
     public InvoiseRepositoryInterface getInvoiseRepository() {
@@ -17,7 +17,7 @@ public class InvoiseService  implements  InvoiseServiceInterface{
     }
 
     public void createInvoise(Invoise invoise){
-       invoise.setNumber(String.valueOf( ++inc));
+       invoise.setNumber("INV_" + (++inc));
        invoiseRepository.createInvoise(invoise);
     }
 }
